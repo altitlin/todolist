@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './TodoItem.less';
 
 const TodoItem = props => {
-  const { id, text, isDone, removeTodo, doneTodo } = props;
+  const { todo: { id, text, isDone }, removeTodo, doneTodo } = props;
 
   const onRemoveTodo = () => removeTodo(id);
   const onDoneTodo = () => doneTodo(id);
@@ -15,17 +15,15 @@ const TodoItem = props => {
         {text}
       </p>
       <div className="list__btns">
-        <span className='list__btn' ocClick={onDoneTodo}></span>
-        <span className='list__btn' ocClick={onRemoveTodo}></span>
+        <span className='list__btn' onClick={onDoneTodo}>&#10004;</span>
+        <span className='list__btn' onClick={onRemoveTodo}>&#10006;</span>
       </div>
     </li>
   );
 };
 
 TodoItem.propTypes = {
-  id: PropTypes.number,
-  text: PropTypes.string,
-  isDone: PropTypes.bool,
+  todo: PropTypes.object,
   removeTodo: PropTypes.func,
   doneTodo: PropTypes.func
 };

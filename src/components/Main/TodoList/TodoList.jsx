@@ -8,17 +8,19 @@ const TodoList = props => {
   const { items, removeTodo, doneTodo } = props;
 
   return (
-    <ul className='list'>
-      {!items.lenght && 'Task list is empty.'}
-      {items.map(item =>
-        <TodoItem
-          key={item.id}
-          todo={item}
-          removeTodo={removeTodo}
-          doneTodo={doneTodo}
-        />)
-      }
-    </ul>
+    <>
+      {items.length === 0 && 'Task list is empty.'}
+      <ul className='list'>
+        {items.map(item =>
+          <TodoItem
+            key={item.id}
+            todo={item}
+            removeTodo={removeTodo}
+            doneTodo={doneTodo}
+          />)
+        }
+      </ul>
+    </>
   );
 };
 

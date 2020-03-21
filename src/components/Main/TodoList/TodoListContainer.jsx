@@ -12,6 +12,4 @@ const mapDispathToProps = dispatch => ({
   doneTodo: id => dispatch(doneTodoCreator(id))
 });
 
-const TodoListContainer = connect(mapStateToProps, mapDispathToProps)(TodoList);
-
-export default TodoListContainer;
+export default connect(mapStateToProps, mapDispathToProps)(TodoList);

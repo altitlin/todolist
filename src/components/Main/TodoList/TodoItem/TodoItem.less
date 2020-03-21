@@ -1,3 +1,36 @@
-// .list__item {
+@import '../../../../assets/colors.less';
 
-// }
+.list {
+  &__item {
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    color: #000;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid @gray;
+
+    &:not(:last-child) {
+      border-bottom: none;
+    }
+
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+  }
+
+  &__text_done {
+    text-decoration: line-through;
+  }
+
+  &__btn {
+    color: @white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
