@@ -1,0 +1,24 @@
+@import '../../assets/colors.less';
+
+.footer {
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  grid-column-gap: 15px;
+
+  &__input-text {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid @gray;
+    border-radius: 3px;
+    outline: none;
+  }
+
+  &__input-text:focus {
+    border: 1px solid @black;
+  }
+
+  &__btn {
+    opacity: .5;
+    background-color: @blue;
+  }
+}
